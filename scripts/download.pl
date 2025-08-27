@@ -109,6 +109,9 @@ sub select_tool {
 	if ($custom_tool) {
 		return $custom_tool;
 	}
+    if (tool_present("aria2c", "aria2")) {
+        return "aria2c";
+    }
 
 	# Try to use curl if available
 	if (tool_present("curl", "curl")) {
